@@ -7,9 +7,9 @@ module Net
 
       url = "http://#{@address}:#{@port}#{req.path}"
 
-      Rails.logger.ap url
-      Rails.logger.ap req
-      Rails.logger.ap self
+      HttpLog.log url.inspect
+      HttpLog.log req.inspect
+      HttpLog.log self.inspect
 
       log_enabled = HttpLog.url_approved?(url)
 
