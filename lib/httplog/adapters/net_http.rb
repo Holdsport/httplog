@@ -7,6 +7,10 @@ module Net
 
       url = "http://#{@address}:#{@port}#{req.path}"
 
+      Rails.logger.ap url
+      Rails.logger.ap req
+      Rails.logger.ap self
+
       log_enabled = HttpLog.url_approved?(url)
 
       if log_enabled && started?
